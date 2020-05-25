@@ -86,6 +86,7 @@ const ContactPage = () => {
           Submit
         </Submit>
       </Form>
+      <small>build updated</small>
     </PageLayout>
   )
 }
