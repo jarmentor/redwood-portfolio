@@ -1,6 +1,6 @@
 datasource DS {
   provider = "postgres"
-  url      = env("DATABASE_URL")
+  url = "***"
 }
 
 generator client {
@@ -16,6 +16,7 @@ generator client {
 //   email String  @unique
 //   name  String?
 // }
+
 
 
 model ContactForm {
