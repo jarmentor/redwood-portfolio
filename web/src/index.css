@@ -8,6 +8,10 @@
   --brand-primary: var(--yellow);
 }
 
+
+a {
+  color: var(--midnight-green)
+}
 * {
   font-family: system, -apple-system, '.SFNSText-Regular', 'San Francisco',
     'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif;
@@ -108,6 +112,11 @@ p {
 small {
   font-size: 0.75em;
   line-height: 1em;
+}
+
+.lead {
+  font-size: 1.5em;
+  line-height: 1.125em;
 }
 
 
