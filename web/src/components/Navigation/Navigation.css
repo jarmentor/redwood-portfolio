@@ -34,9 +34,9 @@ nav a::after {
   right: 0;
   background-color: var(--yellow);
   opacity: .9;
-  mix-blend-mode: multiply;
   visibility: hidden;
   transform: scaleX(0);
+  z-index: -5;
   transform-origin: top left;
   transition: all 0.3s ease-in-out 0s;
 }
