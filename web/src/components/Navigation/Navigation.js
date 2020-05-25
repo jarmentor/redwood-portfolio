@@ -14,6 +14,7 @@ const Navigation = () => {
     <nav>
       <ul>
         <NavItem to={routes.about()}>About</NavItem>
+        <NavItem to={routes.projects()}>Projects</NavItem>
         <NavItem to={routes.typography()}>Typography</NavItem>
         <NavItem to={routes.contact()}>Contact</NavItem>
       </ul>
