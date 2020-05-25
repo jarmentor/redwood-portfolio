@@ -24,6 +24,6 @@ export const schema = gql`
   }
 
   type Mutation {
-    createContactForm(input: CreateContactInput!): Contact
+    createContactForm(input: CreateContactFormInput!): ContactForm
   }
 `
