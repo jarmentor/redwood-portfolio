@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/dce39702-fe44-4a60-adba-f1ff8e8ae3d1/deploy-status)](https://app.netlify.com/sites/compassionate-lovelace-ebd319/deploys)
+
 # Redwood
 >**HEADS UP:** RedwoodJS is _NOT_ ready for use in Production. It relies heavily on Prisma2, which is currently in testing with an expected production release coming soon. See status at ["Is Prisma2 Ready?"](https://isprisma2ready.com)
 
