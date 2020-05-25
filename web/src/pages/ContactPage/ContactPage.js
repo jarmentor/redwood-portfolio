@@ -22,7 +22,7 @@ const ContactPage = () => {
   const formMethods = useForm()
   const [create, { loading, error }] = useMutation(CREATE_CONTACT, {
     onCompleted: () => {
-      // TODO: Change success policy.
+      // TODO: Change success options.
       alert('Thank you for your submission!')
       formMethods.reset()
     },
@@ -34,9 +34,7 @@ const ContactPage = () => {
   return (
     <PageLayout>
       <h1>Contact</h1>
-      <h2 className="subhead">
-        Proident eiusmod exercitation esse irure Lorem.
-      </h2>
+      <h2 className="subhead">Start a new project or just drop me a line!</h2>
       <Form
         className="contactForm"
         validation={{ mode: 'onBlur' }}
@@ -86,7 +84,7 @@ const ContactPage = () => {
           Submit
         </Submit>
       </Form>
-      <small>build updated</small>
+      ƒ
     </PageLayout>
   )
 }
