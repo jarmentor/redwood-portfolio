@@ -109,3 +109,9 @@ small {
   font-size: 0.75em;
   line-height: 1em;
 }
+
+
+.subhead {
+  color: #666;
+  font-weight: 200;
+}
