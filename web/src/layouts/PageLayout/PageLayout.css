@@ -1,0 +1,12 @@
+main {
+  min-height: 70vh;
+  margin: 0 auto;
+  padding: 4vw 5vh 3vh;
+  background: var(--white);
+}
+@media screen and (min-width: 768px) {
+  main {
+    width: 70%;
+    margin: 7em auto;
+  }
+}

@@ -1,0 +1,15 @@
+.masthead {
+  max-width: 30vw;
+}
+
+.masthead a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header .masthead a {
+  font-size: 1.5rem;
+}
+footer .masthead a {
+  font-size: 1rem;
+}
