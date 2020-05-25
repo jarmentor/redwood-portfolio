@@ -4,13 +4,32 @@ import {
   TextAreaField,
   Submit,
   FieldError,
+  useMutation,
 } from '@redwoodjs/web'
+import { useForm } from 'react-hook-form'
 import './ContactPage.css'
 import PageLayout from '@layouts/PageLayout'
 
+const CREATE_CONTACT = gql`
+  mutation CreateContactMutation($input: CreateContactFormInput!) {
+    createContactForm(input: $input) {
+      id
+    }
+  }
+`
+
 const ContactPage = () => {
+  const formMethods = useForm()
+  const [create, { loading, error }] = useMutation(CREATE_CONTACT, {
+    onCompleted: () => {
+      // TODO: Change success policy.
+      alert('Thank you for your submission!')
+      formMethods.reset()
+    },
+  })
+
   const onSubmit = (data) => {
-    console.log(data)
+    create({ variables: { input: data } })
   }
   return (
     <PageLayout>
@@ -22,6 +41,8 @@ const ContactPage = () => {
         className="contactForm"
         validation={{ mode: 'onBlur' }}
         onSubmit={onSubmit}
+        error={error}
+        formMethods={formMethods}
       >
         <label htmlFor="name" errorClassName="error">
           Name
@@ -61,7 +82,9 @@ const ContactPage = () => {
         />
         <FieldError name="message" className="error" />
 
-        <Submit className="submit">Submit</Submit>
+        <Submit disabled={loading} className="submit">
+          Submit
+        </Submit>
       </Form>
     </PageLayout>
   )
