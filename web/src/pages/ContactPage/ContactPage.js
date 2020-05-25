@@ -84,7 +84,6 @@ const ContactPage = () => {
           Submit
         </Submit>
       </Form>
-      ƒ
     </PageLayout>
   )
 }
