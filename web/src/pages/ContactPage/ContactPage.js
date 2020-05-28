@@ -11,36 +11,34 @@ import PageLayout from '@layouts/PageLayout'
 import { css } from 'linaria'
 
 const contactFormStyles = css`
-  & {
-    display: flex;
-    flex-direction: column;
-  }
-  & input,
-  & textarea {
+  display: flex;
+  flex-direction: column;
+
+  input,
+  textarea {
     border: 1px solid #c4c4c4;
     max-width: 25em;
     padding: 0.625em;
     transition: ease-in-out 150ms;
     will-change: border-color border-width;
-  }
-  & input:focus,
-  & textarea:focus {
-    border-bottom-width: 3px;
-    outline: 0;
-    border-bottom-color: var(--medium-turquoise);
+
+    :focus {
+      border-bottom-width: 3px;
+      outline: 0;
+      border-bottom-color: var(--medium-turquoise);
+    }
   }
 
-  & label {
+  label {
     margin-top: 4em;
     margin-bottom: 1em;
+    :after {
+      display: inline;
+      content: ':';
+    }
   }
 
-  & label:after {
-    display: inline;
-    content: ':';
-  }
-
-  & span.error {
+  .error {
     border: var(--bittersweet);
     color: var(--bittersweet);
     font-size: 0.8em;

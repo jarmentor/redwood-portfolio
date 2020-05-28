@@ -2,12 +2,10 @@ import { Link, routes } from '@redwoodjs/router'
 import { css } from 'linaria'
 
 const mastheadStyles = css`
-  & {
-    max-width: 30vw;
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+  max-width: 30vw;
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 
   header & a {
