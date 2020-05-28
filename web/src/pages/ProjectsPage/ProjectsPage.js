@@ -1,6 +1,6 @@
 import PageLayout from '@layouts/PageLayout'
 import Project from '@components/Project'
-import { css } from 'lineria'
+import { css } from 'linaria'
 
 const projectContainerStyles = css`
   display: grid;

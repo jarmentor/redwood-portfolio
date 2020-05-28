@@ -8,7 +8,7 @@ import {
 } from '@redwoodjs/web'
 import { useForm } from 'react-hook-form'
 import PageLayout from '@layouts/PageLayout'
-import { css } from 'lineria'
+import { css } from 'linaria'
 
 const contactFormStyles = css`
   & {

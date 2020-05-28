@@ -1,5 +1,5 @@
 import { Link, routes } from '@redwoodjs/router'
-import { css } from 'lineria'
+import { css } from 'linaria'
 
 const mastheadStyles = css`
   & {

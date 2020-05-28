@@ -1,13 +1,11 @@
 import PageLayout from '@layouts/PageLayout'
 import { Link, routes } from '@redwoodjs/router'
-import { css } from 'lineria'
+import { css } from 'linaria'
 
 const profilePhotoStyles = css`
-  .profilePhoto {
-    width: 10em;
-    border-radius: 50%;
-    filter: grayscale(1) brightness(1.24);
-  }
+  width: 10em;
+  border-radius: 50%;
+  filter: grayscale(1) brightness(1.24);
 `
 
 const articleStyles = css`

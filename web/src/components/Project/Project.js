@@ -1,4 +1,4 @@
-import { css } from 'lineria'
+import { css } from 'linaria'
 
 const projectStyles = css`
   padding: 2em 4em;
