@@ -7,8 +7,9 @@ import {
   useMutation,
 } from '@redwoodjs/web'
 import { useForm } from 'react-hook-form'
-import PageLayout from '@layouts/PageLayout'
 import { css } from 'linaria'
+
+import { PageLayout } from '@layouts'
 
 const contactFormStyles = css`
   display: flex;
@@ -16,7 +17,8 @@ const contactFormStyles = css`
 
   input,
   textarea {
-    border: 1px solid #c4c4c4;
+    border: none;
+    border-bottom: 1px solid var(--midnight-green);
     max-width: 25em;
     padding: 0.625em;
     transition: ease-in-out 150ms;
@@ -30,8 +32,8 @@ const contactFormStyles = css`
   }
 
   label {
-    margin-top: 4em;
-    margin-bottom: 1em;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
     :after {
       display: inline;
       content: ':';
@@ -41,8 +43,8 @@ const contactFormStyles = css`
   .error {
     border: var(--bittersweet);
     color: var(--bittersweet);
-    font-size: 0.8em;
-    margin-top: 1em;
+    font-size: 0.8rem;
+    margin-top: 1rem;
   }
 `
 const submitStyles = css`

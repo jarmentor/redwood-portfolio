@@ -1,5 +1,6 @@
-import PageLayout from 'src/layouts/PageLayout'
 import { Link, routes } from '@redwoodjs/router'
+
+import { PageLayout } from '@layouts'
 const HomePage = () => (
   <PageLayout>
     <h1>Welcome</h1>

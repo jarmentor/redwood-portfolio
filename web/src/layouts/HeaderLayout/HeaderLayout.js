@@ -1,13 +1,16 @@
-import Navigation from 'src/components/Navigation'
-import Masthead from 'src/components/Masthead'
 import { css } from 'linaria'
+import { breakpoints } from '@styles'
+
+import { Masthead, Navigation } from '@components'
 
 const headerStyles = css`
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   max-width: 100vw;
   padding: 4vw 5vh 3vh;
-  @media screen and (max-width: 600px) {
+
+  @media screen and (max-width: ${breakpoints.medium}) {
     flex-direction: column;
     text-align: left;
     justify-content: flex-start;
@@ -17,7 +20,7 @@ const headerStyles = css`
 const HeaderLayout = ({ children }) => {
   return (
     <header className={headerStyles}>
-      <Masthead className="masthead" />
+      <Masthead />
       <Navigation />
       {children}
     </header>

@@ -34,9 +34,6 @@ const Typography = () => (
         euismod. Aenean faucibus odio nec dolor molestie tempus.
       </p>
     </article>
-    <p>
-      <small>Find me in ./web/src/pages/Typography/Typography.js</small>
-    </p>
   </PageLayout>
 )
 

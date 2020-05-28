@@ -10,6 +10,7 @@ module.exports = {
           '@components': './src/components',
           '@pages': './src/pages',
           '@layouts': './src/layouts',
+          '@styles': './src/styles',
         },
       },
     ],

@@ -7,9 +7,8 @@ const ProjectContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   max-width: 400px;
-  padding: 2em 4em;
 `
-const ProjectImage = styled.img`
+const ProjectImage = css`
   width: 400px;
   height: 400px;
 `
@@ -28,7 +27,8 @@ const ProjectLink = css`
 const Project = ({ number }) => {
   return (
     <ProjectContainer>
-      <ProjectImage
+      <img
+        className={ProjectImage}
         src="https://placehold.it/400x400"
         alt="project_placeholder"
       />

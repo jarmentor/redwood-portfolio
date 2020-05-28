@@ -1,31 +1,32 @@
-import PageLayout from '@layouts/PageLayout'
 import { Link, routes } from '@redwoodjs/router'
-import { css } from 'linaria'
+import { styled } from 'linaria/react'
 
-const profilePhotoStyles = css`
+import { PageLayout } from '@layouts'
+
+const ProfilePhoto = styled.img`
   width: 10em;
   border-radius: 50%;
   filter: grayscale(1) brightness(1.24);
 `
-
-const articleStyles = css`
-  section + section {
+const Section = styled.section`
+  & + & {
     margin-top: 10em;
   }
 `
+
 const AboutPage = () => {
   return (
     <PageLayout>
-      <article className={articleStyles}>
-        <section>
-          <img src="/profile_photo.jpg" alt="" className={profilePhotoStyles} />
+      <article>
+        <Section>
+          <ProfilePhoto src="/profile_photo.jpg" alt="" />
           <h1>Hi, I'm Jonathan</h1>
           <p className="lead">
             I'm a designer and developer focused on crafting meaningful user
             experiences through visual identities and digital design.
           </p>
-        </section>
-        <section>
+        </Section>
+        <Section>
           <h2>Looking to start a new project?</h2>
           <p>
             <Link to={routes.contact()}>Contact me</Link> or{' '}
@@ -34,7 +35,7 @@ const AboutPage = () => {
             </a>{' '}
             I'm looking forward to making something new with you.
           </p>
-        </section>
+        </Section>
       </article>
     </PageLayout>
   )

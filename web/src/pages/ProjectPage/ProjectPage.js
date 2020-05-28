@@ -1,8 +1,12 @@
-import PageLayout from '@layouts/PageLayout'
-import Gallery from '@components/Gallery'
+import { Link, routes } from '@redwoodjs/router'
+
+import { PageLayout } from '@layouts'
+import { Gallery } from '@components'
+
 const ProjectPage = ({ id }) => {
   return (
     <PageLayout>
+      <Link to={routes.projects()}>Return to Project Archive</Link>
       <img src="https://placehold.it/800x600" width="100% " alt="" />
       <h1>Project {id}</h1>
       <p>
