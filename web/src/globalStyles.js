@@ -1,4 +1,5 @@
 import { cx, css } from 'linaria'
+
 import { breakpoints, colors, typography } from '@styles'
 
 const root = css`
@@ -18,7 +19,6 @@ const root = css`
 const globals = css`
   :global() {
     html {
-      background-color: var(--bittersweet);
       color: var(--midnight-green);
       @media screen and (max-width: ${breakpoints.small}) {
         font-size: 100%;

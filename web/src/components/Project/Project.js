@@ -5,16 +5,27 @@ import { Link, routes } from '@redwoodjs/router'
 const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
   justify-content: center;
-  max-width: 400px;
+  background: var(--white);
+  border-radius: 2px;
+  display: inline-block;
+  margin: 1rem;
+  padding: 1rem;
+  position: relative;
+  transition: 300ms ease-in-out;
+  will-change: box-shadow;
+
+  &:hover {
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.16), 0 5px 5px rgba(0, 0, 0, 0.23);
+  }
 `
 const ProjectImage = css`
-  width: 400px;
-  height: 400px;
+  max-width: 100%;
 `
 
 const ProjectLink = css`
-  background-color: var(--bittersweet);
+  background-color: var(--midnight-green);
   border: 0;
   box-shadow: 0;
   color: var(--white);

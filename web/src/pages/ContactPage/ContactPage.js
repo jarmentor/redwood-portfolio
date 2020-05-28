@@ -18,19 +18,19 @@ const contactFormStyles = css`
   input,
   textarea {
     border: none;
-    border-bottom: 1px solid var(--midnight-green);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
     max-width: 25em;
-    padding: 0.625em;
+    font-size: 1.125rem;
+    padding: 0.625rem;
+    color: var(--midnight-green);
     transition: ease-in-out 150ms;
-    will-change: border-color border-width;
-
+    will-change: box-shadow;
+    border-radius: 5px;
     :focus {
-      border-bottom-width: 3px;
       outline: 0;
-      border-bottom-color: var(--medium-turquoise);
+      box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
     }
   }
-
   label {
     margin-top: 4rem;
     margin-bottom: 1rem;
@@ -48,7 +48,7 @@ const contactFormStyles = css`
   }
 `
 const submitStyles = css`
-  background: var(--medium-turquoise);
+  background: var(--midnight-green);
   border-radius: 0.125em;
   border: 0;
   box-shadow: 0px;

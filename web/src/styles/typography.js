@@ -1,8 +1,5 @@
 import { css } from 'linaria'
 
-const fontStack = `system, -apple-system, '.SFNSText-Regular', 'San Francisco',
-'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif`
-
 const typography = css`
   :global() {
     html {
@@ -10,7 +7,9 @@ const typography = css`
     }
 
     body {
-      font-family: ${fontStack};
+      font-family: nimbus-sans, sans-serif;
+      font-weight: 400;
+      font-style: normal;
       font-kerning: normal;
       font-variant-ligatures: common-ligatures contextual;
       font-feature-settings: 'kern', 'liga', 'clig', 'calt';

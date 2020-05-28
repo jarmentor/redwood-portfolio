@@ -1,6 +1,6 @@
 import { css } from 'linaria'
-import { breakpoints } from '@styles'
 
+import { breakpoints } from '@styles'
 import { HeaderLayout, FooterLayout } from '@layouts'
 
 const mainStyles = css`
@@ -14,7 +14,7 @@ const mainStyles = css`
       transform: translateY(-5vh);
     }
   }
-  background: var(--white);
+  background: var(--mint-cream);
   margin: 0 auto;
   min-height: 70vh;
   padding: 4vw 5vh 3vh;

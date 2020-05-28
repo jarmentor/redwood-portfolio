@@ -2,6 +2,7 @@ import Masthead from '@components/Masthead'
 import Copyright from '@components/Copyright'
 import { css } from 'linaria'
 import GithubLogo from '@components/GithubLogo'
+
 import { breakpoints } from '@styles'
 
 const footerStyles = css`
@@ -9,10 +10,9 @@ const footerStyles = css`
   background: var(--brand-primary);
   color: var(--midnight-green);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 0 auto;
-  padding: 3rem;
-  text-align: left;
+  padding: 4vw 5vh 3vh;
 
   @media screen and (max-width: ${breakpoints.medium}) {
     flex-direction: column;
