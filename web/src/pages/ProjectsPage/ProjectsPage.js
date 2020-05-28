@@ -1,12 +1,10 @@
 import PageLayout from '@layouts/PageLayout'
 import Project from '@components/Project'
-import { css } from 'linaria'
+import { styled } from 'linaria/react'
 
-const projectContainerStyles = css`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2em;
-  grid-template-rows: auto;
+const ProjectArchive = styled.div`
+  display: flex;
+  flex-wrap: wrap;
 `
 
 const ProjectPage = () => {
@@ -14,7 +12,7 @@ const ProjectPage = () => {
     <PageLayout>
       <h1>Projects</h1>
       <p>selected work coming soon</p>
-      <div className={projectContainerStyles}>
+      <ProjectArchive>
         <Project number="1" />
         <Project number="2" />
         <Project number="3" />
@@ -22,7 +20,8 @@ const ProjectPage = () => {
         <Project number="5" />
         <Project number="6" />
         <Project number="7" />
-      </div>
+        <Project number="8" />
+      </ProjectArchive>
     </PageLayout>
   )
 }

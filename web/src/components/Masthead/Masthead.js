@@ -2,23 +2,20 @@ import { Link, routes } from '@redwoodjs/router'
 import { css } from 'linaria'
 
 const mastheadStyles = css`
-  max-width: 30vw;
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
+  max-width: 20%;
+`
 
-  header & a {
-    font-size: 1.5em;
-  }
-  footer & a {
-    font-size: 1em;
-  }
+const mastheadLink = css`
+  color: inherit;
+  font-size: 1em;
+  text-decoration: none;
 `
 
 const Masthead = ({ title = 'Jonathan Armentor', children, ...props }) => (
   <div className={mastheadStyles} {...props}>
-    <Link to={routes.home()}>{children || <h1>{title}</h1>}</Link>
+    <Link className={mastheadLink} to={routes.home()}>
+      {children || <h1>{title}</h1>}
+    </Link>
   </div>
 )
 export default Masthead

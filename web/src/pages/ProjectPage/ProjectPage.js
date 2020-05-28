@@ -1,10 +1,10 @@
 import PageLayout from '@layouts/PageLayout'
 import Gallery from '@components/Gallery'
-const ProjectPage = () => {
+const ProjectPage = ({ id }) => {
   return (
     <PageLayout>
       <img src="https://placehold.it/800x600" width="100% " alt="" />
-      <h1>Project</h1>
+      <h1>Project {id}</h1>
       <p>
         Veniam est incididunt et ea nisi quis enim elit esse. Mollit sit esse
         labore ex magna laboris amet. Excepteur nostrud ea ut magna nostrud
