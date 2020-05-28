@@ -1,18 +1,7 @@
-function getCurrentYear() {
-  const year = new Date().getFullYear()
-  return year
-}
-const Copyright = ({ year, holder, ...props }) => {
-  const copyrightYear = year || getCurrentYear()
-  const copyrightHolder = holder || props.children
-
-  return (
-    <p {...props}>
-      <small>
-        &copy; Copyright {copyrightYear} {copyrightHolder}
-      </small>
-    </p>
-  )
-}
+const Copyright = ({ year, children, ...props }) => (
+  <small {...props}>
+    &copy; Copyright {year || new Date().getFullYear()} {children}
+  </small>
+)
 
 export default Copyright

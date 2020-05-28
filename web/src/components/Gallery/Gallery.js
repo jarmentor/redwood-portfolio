@@ -1,6 +1,6 @@
-import { css } from 'linaria'
+import { styled } from 'linaria/react'
 
-const galleryStyles = css`
+const GalleryContainer = styled.div`
   display: grid;
   max-width: 80%;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -8,14 +8,17 @@ const galleryStyles = css`
   grid-template-rows: auto;
 `
 
-const Gallery = ({ images }) => {
-  return (
-    <div className={galleryStyles}>
-      {images.map((image, counter) => (
-        <img key={counter} src={image} width="200" height="200" />
-      ))}
-    </div>
-  )
-}
+const GalleryItem = styled.img`
+  width: 200px;
+  height: 200px;
+`
+
+const Gallery = ({ images }) => (
+  <GalleryContainer>
+    {images.map((image, counter) => (
+      <GalleryItem key={counter} src={image} />
+    ))}
+  </GalleryContainer>
+)
 
 export default Gallery

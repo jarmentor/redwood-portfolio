@@ -1,6 +1,6 @@
 import { css } from 'linaria'
 
-export const globals = css`
+const globals = css`
   :global() {
     :root {
       --midnight-green: #1a535c;
@@ -130,3 +130,5 @@ export const globals = css`
     }
   }
 `
+
+export default globals

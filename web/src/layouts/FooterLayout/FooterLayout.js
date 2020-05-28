@@ -14,16 +14,12 @@ const footerStyles = css`
   @media screen and (max-width: 600px) {
     flex-direction: column;
   }
-
-  h1 {
-    margin-top: 0;
-  }
 `
 
 const FooterLayout = ({ title = 'Jonathan Armentor', children }) => (
   <footer className={footerStyles}>
     <Masthead title={title} />
-    <Copyright holder={title} />
+    <Copyright>{title}</Copyright>
     {children}
   </footer>
 )
