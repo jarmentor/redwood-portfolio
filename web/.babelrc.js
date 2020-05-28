@@ -1,5 +1,6 @@
 module.exports = {
   extends: '../babel.config.js',
+  presets: ['linaria/babel'],
   plugins: [
     [
       'module-resolver',
