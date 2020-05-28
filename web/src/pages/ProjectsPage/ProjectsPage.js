@@ -1,12 +1,20 @@
 import PageLayout from '@layouts/PageLayout'
 import Project from '@components/Project'
-import './ProjectsPage.css'
+import { css } from 'lineria'
+
+const projectContainerStyles = css`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2em;
+  grid-template-rows: auto;
+`
+
 const ProjectPage = () => {
   return (
     <PageLayout>
       <h1>Projects</h1>
       <p>selected work coming soon</p>
-      <div className="projectContainer">
+      <div className={projectContainerStyles}>
         <Project number="1" />
         <Project number="2" />
         <Project number="3" />

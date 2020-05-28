@@ -1,9 +1,0 @@
-.profilePhoto {
-  width: 10em;
-  border-radius: 50%;
-  filter: grayscale(1) brightness(1.24);
-}
-
-section + section {
-  margin-top: 10em;
-}
