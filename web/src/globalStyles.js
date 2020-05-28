@@ -1,5 +1,8 @@
 import { css } from 'linaria'
 
+const fontStack = `system, -apple-system, '.SFNSText-Regular', 'San Francisco',
+'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif`
+
 const globals = css`
   :global() {
     :root {
@@ -19,11 +22,8 @@ const globals = css`
       padding: 0;
       width: 100%;
       height: 100%;
-    }
-    * {
-      font-family: system, -apple-system, '.SFNSText-Regular', 'San Francisco',
-        'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif;
       font-size: 14px;
+      font-family: ${fontStack};
       line-height: 1.25em;
       @media screen and (max-width: 768px) {
         font-size: 16px;
