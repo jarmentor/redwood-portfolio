@@ -2,45 +2,75 @@ import { css } from 'linaria'
 
 const typography = css`
   :global() {
-    html {
-      font-size: 80%; /* 16px */
-    }
 
     body {
-      font-family: nimbus-sans, sans-serif;
-      font-weight: 400;
-      font-style: normal;
-      font-kerning: normal;
-      font-variant-ligatures: common-ligatures contextual;
-      font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-      line-height: 1.4;
-    }
+  font-family: nimbus-sans, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    font-style: normal;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures contextual;
+    font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+    margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
 
-    p {
-      max-width: 45rem;
-      font-size: 1.25em;
-      margin-bottom: 1.75rem;
-    }
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p {
+    margin-top: 0;
+}
 
-    h1 {
-      font-size: 3em;
-      margin-bottom: 3.5rem;
-    }
+h1 {
+    font-size: 6rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
 
-    h2 {
-      font-size: 2em;
-      margin-bottom: 1.75rem;
-    }
+h2 {
+    font-size: 3.75rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+h3 {
+    font-size: 3rem;
+    line-height: 1.125;
+    margin-bottom: 0.875rem;
+}
+h4 {
+    font-size: 2.125rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+h5 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+h6 {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
 
-    h3 {
-      font-size: 1.5em;
-      margin-bottom: 1.75rem;
-    }
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 45rem;
+}
 
-    article {
-      padding: 3.5rem 2rem;
-    }
-  }
+main {
+    margin: 48px;
+}
+
 `
 
 export default typography
