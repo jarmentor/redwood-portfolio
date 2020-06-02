@@ -25,3 +25,11 @@ model ContactForm {
   message String
   createdAt DateTime @default(now())
 }
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  title     String
+  body      String
+  author    String   @default("")
+  createdAt DateTime @default(now())
+}

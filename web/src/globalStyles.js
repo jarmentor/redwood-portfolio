@@ -13,6 +13,7 @@ const root = css`
       --yellow: ${colors.yellow};
       --brand-primary: var(--yellow);
       --off-white: ${colors.offWhite};
+      --linkHighlight: var(--yellow);
     }
   }
 `
@@ -29,19 +30,46 @@ const globals = css`
       }
     }
 
-    *,
-    *:before,
-    *:after {
-      box-sizing: inherit;
+    * {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-user-select: none; /* disable text select */
+      -webkit-touch-callout: none; /* disable callout, image save panel (popup) */
+      -webkit-tap-highlight-color: transparent; /* "turn off" link highlight */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      &,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
     }
 
-    a {
-      color: var(--midnight-green);
+    h1,
+    h2,
+    h3 {
+      text-rendering: optimizeLegibility;
+    }
+    main a:not(.nolinkstyles) {
+      text-decoration: none;
+      color: inherit;
+      box-shadow: inset 0 -0.125rem 0 0 var(--linkHighlight);
+      transition: cubic-bezier(0.62, 0.28, 0.23, 0.99) 0.5s;
+      will-change: box-shadow;
+
+      :hover {
+        box-shadow: inset 0 -30em 0 0 var(--linkHighlight);
+      }
+    }
+
+    a:focus {
+      outline: 0;
     }
 
     body {
       padding: 0;
       margin: 0;
+      background-color: var(--offWhite);
     }
   }
 `

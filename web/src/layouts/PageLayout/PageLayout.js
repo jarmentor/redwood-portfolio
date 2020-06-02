@@ -1,18 +1,7 @@
 import { css } from 'linaria'
 
-import { breakpoints } from '@styles'
 import { HeaderLayout, FooterLayout } from '@layouts'
 
-const mainStyles = css`
-  background: var(--off-white);
-  padding: 2rem;
-  margin: 0 auto;
-  max-width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  grid-template-rows: auto;
-  gap: 0.5rem;
-`
 const PageLayout = ({ children }) => (
   <>
     <HeaderLayout />
@@ -20,5 +9,13 @@ const PageLayout = ({ children }) => (
     <FooterLayout />
   </>
 )
+
+const mainStyles = css`
+  background: var(--off-white);
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 100%;
+  min-height: 60vh;
+`
 
 export default PageLayout

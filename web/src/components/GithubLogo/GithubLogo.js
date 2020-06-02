@@ -3,14 +3,6 @@ import { css } from 'linaria'
 const LogoStyles = css`
   fill: var(--midnight-green);
 `
-const LogoLink = ({ link, children }) => {
-  return (
-    <a href={link} target="_blank" rel="noopener noreferrer">
-      {children}
-    </a>
-  )
-}
-
 const Logo = () => (
   <svg
     height="32"
@@ -27,14 +19,14 @@ const Logo = () => (
     ></path>
   </svg>
 )
-const GithubLogo = ({ link }) => {
-  return link ? (
-    <LogoLink link={link}>
-      <Logo />
-    </LogoLink>
-  ) : (
+const GithubLogo = ({ link }) => (
+  <a href={link} target="_blank" rel="noopener noreferrer">
     <Logo />
-  )
+  </a>
+)
+
+GithubLogo.defaultProps = {
+  link: '#',
 }
 
 export default GithubLogo
