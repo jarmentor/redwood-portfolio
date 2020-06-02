@@ -7,6 +7,7 @@ import './globalStyles'
 
 import Routes from 'src/Routes'
 
+import './scaffold.css'
 netlifyIdentity.init()
 
 ReactDOM.render(

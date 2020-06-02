@@ -1,6 +1,6 @@
 datasource DS {
   provider = "postgres"
-  url      = env("DATABASE_URL")
+  url = "***"
 }
 
 generator client {
@@ -30,6 +30,6 @@ model Post {
   id        Int      @id @default(autoincrement())
   title     String
   body      String
-  author    String   @default("")
+  author    String
   createdAt DateTime @default(now())
 }

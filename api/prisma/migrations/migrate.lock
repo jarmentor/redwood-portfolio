@@ -1,6 +1,6 @@
-# IF THERE'S A GIT CONFLICT IN THIS FILE, DON'T SOLVE IT MANUALLY!
-# INSTEAD EXECUTE `prisma migrate fix`
 # Prisma Migrate lockfile v1
-# Read more about conflict resolution here: TODO
 
 20200524213315-create-contact
+20200602143426-create_posts
+20200602152520-add_author_posts
+20200602153003-author_with_default_post
