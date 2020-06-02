@@ -1,18 +1,28 @@
-import Masthead from '@components/Masthead'
 import Copyright from '@components/Copyright'
 import { css } from 'linaria'
 import GithubLogo from '@components/GithubLogo'
 
 import { breakpoints } from '@styles'
 
+const FooterLayout = ({ title, children }) => (
+  <footer className={footerStyles}>
+    <Copyright>{title}</Copyright>
+    <div>
+      <GithubLogo link="https://github.com/jarmentor/redwood-portfolio" />
+    </div>
+    {children}
+  </footer>
+)
+
 const footerStyles = css`
-  align-items: baseline;
-  background: var(--brand-primary);
-  color: var(--midnight-green);
+  background-color: var(--off-white);
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-content: flex-end;
+  justify-content: space-around;
   margin: 0 auto;
   padding: 4vw 5vh 3vh;
+  min-height: 30vh;
 
   @media screen and (max-width: ${breakpoints.medium}) {
     flex-direction: column;
@@ -22,13 +32,8 @@ const footerStyles = css`
   }
 `
 
-const FooterLayout = ({ title = 'Jonathan Armentor', children }) => (
-  <footer className={footerStyles}>
-    <Masthead title={title} />
-    <Copyright>{title}</Copyright>
-    <GithubLogo link="https://github.com/jarmentor/redwood-portfolio" />
-    {children}
-  </footer>
-)
+FooterLayout.defaultProps = {
+  title: 'Jonathan Armentor',
+}
 
 export default FooterLayout

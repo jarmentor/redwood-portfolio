@@ -30,10 +30,25 @@ const globals = css`
       }
     }
 
-    *,
-    *:before,
-    *:after {
-      box-sizing: inherit;
+    * {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-user-select: none; /* disable text select */
+      -webkit-touch-callout: none; /* disable callout, image save panel (popup) */
+      -webkit-tap-highlight-color: transparent; /* "turn off" link highlight */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      &,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+    }
+
+    h1,
+    h2,
+    h3 {
+      text-rendering: optimizeLegibility;
     }
     main a:not(.nolinkstyles) {
       text-decoration: none;
@@ -45,6 +60,10 @@ const globals = css`
       :hover {
         box-shadow: inset 0 -30em 0 0 var(--linkHighlight);
       }
+    }
+
+    a:focus {
+      outline: 0;
     }
 
     body {

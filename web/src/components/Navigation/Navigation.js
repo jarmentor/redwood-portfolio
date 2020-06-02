@@ -10,12 +10,19 @@ const NavContainer = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  @media screen and (min-width: ${breakpoints.small}) {
+    li:not(:first-of-type) {
+      margin-left: 2rem;
+    }
+  }
 
-  @media screen and (min-width: ${breakpoints.medium}) {
-    display: flex;
+  @media screen and (max-width: ${breakpoints.small}) {
+    flex-direction: column;
     text-align: left;
+
     li {
-      margin-left: 3em;
+      margin-left: 0;
     }
   }
 `

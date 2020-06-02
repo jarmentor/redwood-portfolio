@@ -2,12 +2,6 @@ import { css } from 'linaria'
 
 import { HeaderLayout, FooterLayout } from '@layouts'
 
-const mainStyles = css`
-  background: var(--off-white);
-  padding: 2rem;
-  margin: 0 auto;
-  max-width: 100%;
-`
 const PageLayout = ({ children }) => (
   <>
     <HeaderLayout />
@@ -15,5 +9,13 @@ const PageLayout = ({ children }) => (
     <FooterLayout />
   </>
 )
+
+const mainStyles = css`
+  background: var(--off-white);
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 100%;
+  min-height: 60vh;
+`
 
 export default PageLayout
