@@ -11,6 +11,7 @@ module.exports = {
           '@pages': './src/pages',
           '@layouts': './src/layouts',
           '@styles': './src/styles',
+          '@testContent': './src/testContent',
         },
       },
     ],

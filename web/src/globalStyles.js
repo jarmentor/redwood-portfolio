@@ -13,6 +13,7 @@ const root = css`
       --yellow: ${colors.yellow};
       --brand-primary: var(--yellow);
       --off-white: ${colors.offWhite};
+      --linkHighlight: var(--yellow);
     }
   }
 `
@@ -34,14 +35,22 @@ const globals = css`
     *:after {
       box-sizing: inherit;
     }
+    main a:not(.nolinkstyles) {
+      text-decoration: none;
+      color: inherit;
+      box-shadow: inset 0 -0.125rem 0 0 var(--linkHighlight);
+      transition: cubic-bezier(0.62, 0.28, 0.23, 0.99) 0.5s;
+      will-change: box-shadow;
 
-    a {
-      color: var(--midnight-green);
+      :hover {
+        box-shadow: inset 0 -30em 0 0 var(--linkHighlight);
+      }
     }
 
     body {
       padding: 0;
       margin: 0;
+      background-color: var(--offWhite);
     }
   }
 `
