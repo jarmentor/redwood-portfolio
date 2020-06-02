@@ -1,7 +1,8 @@
 import { routes } from '@redwoodjs/router'
 import { styled } from 'linaria/react'
-import { breakpoints } from '@styles'
 import NavItem from '@components/NavItem'
+
+import { breakpoints } from '@styles'
 
 const NavContainer = styled.ul`
   display: block;

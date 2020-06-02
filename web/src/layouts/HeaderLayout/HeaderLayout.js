@@ -1,30 +1,29 @@
-import { css } from 'linaria'
+import { styled } from 'linaria/react'
 
 import { breakpoints } from '@styles'
 import { Masthead, Navigation } from '@components'
 
-const headerStyles = css`
+const Header = styled.header`
+  max-width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: baseline;
-  padding: 4vw 5vh 3vh;
   background: var(--yellow);
+  min-height: 6rem;
+  padding: 1rem 2rem;
 
-  @media screen and (max-width: ${breakpoints.medium}) {
-    height: 12rem;
+  @media screen and (max-width: ${breakpoints.small}) {
     flex-direction: column;
-    text-align: left;
-    justify-items: center;
+    align-items: flex-start;
   }
 `
 
-const HeaderLayout = ({ children }) => {
+const HeaderLayout = () => {
   return (
-    <header className={headerStyles}>
+    <Header>
       <Masthead />
       <Navigation />
-      {children}
-    </header>
+    </Header>
   )
 }
 

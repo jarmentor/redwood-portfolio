@@ -12,6 +12,7 @@ const root = css`
       --bittersweet: ${colors.bittersweet};
       --yellow: ${colors.yellow};
       --brand-primary: var(--yellow);
+      --off-white: ${colors.offWhite};
     }
   }
 `

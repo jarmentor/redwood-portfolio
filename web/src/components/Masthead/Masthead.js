@@ -5,10 +5,11 @@ const mastheadLink = css`
   color: inherit;
   max-width: auto;
   margin: 0;
-  padding: 0;
   line-height: 1;
+
   & > h1 {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
     text-transform: uppercase;
     margin-bottom: 0;
   }
