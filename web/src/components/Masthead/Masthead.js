@@ -8,7 +8,7 @@ const mastheadLink = css`
   line-height: 1;
 
   & > h1 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     line-height: 1.5;
     text-transform: uppercase;
     margin-bottom: 0;
@@ -25,4 +25,5 @@ const Masthead = ({ title, children, ...props }) => (
 Masthead.defaultProps = {
   title: 'Jonathan Armentor',
 }
+
 export default Masthead

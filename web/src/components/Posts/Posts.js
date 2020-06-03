@@ -41,7 +41,6 @@ const PostsList = ({ posts }) => {
       <table className="rw-table">
         <thead>
           <tr>
-            <th>id</th>
             <th>title</th>
             <th>body</th>
             <th>author</th>
