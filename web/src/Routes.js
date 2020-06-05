@@ -3,7 +3,6 @@ import { Router, Route, Private } from '@redwoodjs/router'
 const Routes = () => (
   <Router>
     <Private unauthenticated="home">
-      <Route path="/admin" page={AdminDashboardPage} name="adminDashboard" />
       <Route path="/admin/posts/new" page={NewPostPage} name="newPost" />
 
       <Route
