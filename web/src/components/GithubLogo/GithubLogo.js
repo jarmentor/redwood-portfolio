@@ -1,7 +1,7 @@
 import { css } from 'linaria'
 
 const LogoStyles = css`
-  fill: var(--midnight-green);
+  fill: var(--black);
 `
 const Logo = () => (
   <svg

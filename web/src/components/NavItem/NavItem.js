@@ -7,7 +7,7 @@ const StyledNavItem = styled.li`
     color: inherit;
     font-size: 1rem;
     letter-spacing: 0.125rem;
-    margin-left: -0.325rem;
+    margin-left: -0.125rem;
     padding-top: 0.325rem;
     padding: 0.125rem 0.325rem;
     text-decoration: none;
@@ -20,13 +20,13 @@ const StyledNavItem = styled.li`
     }
 
     &:hover {
-      border-color: var(--midnight-green);
+      border-color: var(--black);
     }
     &.active {
       font-weight: 700;
       font-style: bold;
-      color: var(--white);
-      background-color: var(--midnight-green);
+      color: var(--off-white);
+      background-color: var(--black);
     }
   }
 `
