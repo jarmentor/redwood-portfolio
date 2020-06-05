@@ -29,6 +29,7 @@ const globals = css`
       @media screen and (min-width: ${breakpoints.medium}) {
         font-size: 85%;
       }
+      background-color: var(--off-white);
     }
 
     * {
