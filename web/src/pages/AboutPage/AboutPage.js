@@ -7,6 +7,13 @@ const ProfilePhoto = styled.img`
   width: 10em;
   border-radius: 50%;
   filter: grayscale(1) brightness(1.24);
+  mix-blend-mode: multiply;
+  transition: 300ms ease-in-out;
+  will-change: filter;
+
+  &:hover {
+    filter: grayscale(0);
+  }
 `
 const Section = styled.section`
   & + & {
