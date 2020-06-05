@@ -22,7 +22,7 @@ const root = css`
 const globals = css`
   :global() {
     html {
-      color: var(--midnight-green);
+      color: var(--black);
       @media screen and (max-width: ${breakpoints.small}) {
         font-size: 100%;
       }
