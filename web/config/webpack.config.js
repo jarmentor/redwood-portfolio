@@ -17,6 +17,10 @@ module.exports = (config, { env }) => {
       },
     ],
   }
+  config.module.rules[0].oneOf[3] = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack', 'url-loader'],
+  }
 
   return config
 }
