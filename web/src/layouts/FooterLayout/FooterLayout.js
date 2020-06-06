@@ -1,9 +1,8 @@
 import Copyright from '@components/Copyright'
 import { css } from 'linaria'
+import { ReactComponent as GithubLogo } from '@assets/GithubLogo.svg'
 
 import { breakpoints } from '@styles'
-
-import { ReactComponent as GithubLogo } from './GithubLogo.svg'
 
 const FooterLayout = ({ title, children }) => (
   <footer className={footerStyles}>

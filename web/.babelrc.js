@@ -12,6 +12,7 @@ module.exports = {
           '@layouts': './src/layouts',
           '@styles': './src/styles',
           '@lib': './src/lib',
+          '@assets': './src/assets',
           '@testContent': './src/testContent',
         },
       },
