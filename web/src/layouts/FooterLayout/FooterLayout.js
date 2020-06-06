@@ -1,14 +1,21 @@
 import Copyright from '@components/Copyright'
 import { css } from 'linaria'
-import GithubLogo from '@components/GithubLogo'
 
 import { breakpoints } from '@styles'
+
+import { ReactComponent as GithubLogo } from './GithubLogo.svg'
 
 const FooterLayout = ({ title, children }) => (
   <footer className={footerStyles}>
     <Copyright>{title}</Copyright>
     <div>
-      <GithubLogo link="https://github.com/jarmentor/redwood-portfolio" />
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+        href="https://github.com/jarmentor/redwood-portfolio"
+      >
+        <GithubLogo />
+      </a>
     </div>
     {children}
   </footer>
