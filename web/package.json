@@ -9,17 +9,19 @@
     "@redwoodjs/auth": "^0.8.2",
     "@redwoodjs/router": "^0.8.2",
     "@redwoodjs/web": "^0.8.2",
-    "linaria": "^1.3.3",
     "netlify-identity-widget": "^1.6.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
   },
   "scripts": {
     "lint:css": "stylelint src/**/*.js"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
     "@svgr/webpack": "^5.4.0",
+    "babel-plugin-styled-components": "^1.10.7",
     "stylelint": "^13.5.0",
     "stylelint-config-recommended": "^3.0.0"
   }

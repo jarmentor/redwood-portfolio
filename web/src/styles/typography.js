@@ -1,13 +1,10 @@
-import { css } from 'linaria'
+import { css } from 'styled-components'
 
 const typography = css`
-:global() {
-
   body {
-    font-family: nimbus-sans, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: nimbus-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     font-style: normal;
@@ -69,11 +66,6 @@ const typography = css`
     line-height: 1.5;
     max-width: 45rem;
   }
-
-  main {
-    margin: 48px;
-  }
-
-  `
+`
 
 export default typography

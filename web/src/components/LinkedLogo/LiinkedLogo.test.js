@@ -1,14 +1,14 @@
 import { render, cleanup } from '@redwoodjs/testing'
 
-import SocialLogo from './SocialLogo'
+import LinkedLogo from './LinkedLogo'
 
-describe('SocialLogo', () => {
+describe('LinkedLogo', () => {
   afterEach(() => {
     cleanup()
   })
   it('renders successfully', () => {
     expect(() => {
-      render(<SocialLogo />)
+      render(<LinkedLogo />)
     }).not.toThrow()
   })
 })

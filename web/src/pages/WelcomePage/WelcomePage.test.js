@@ -1,14 +1,14 @@
 import { render, cleanup } from '@testing-library/react'
 
-import NavItem from './NavItem'
+import WelcomePage from './WelcomePage'
 
-describe('NavItem', () => {
+describe('WelcomePage', () => {
   afterEach(() => {
     cleanup()
   })
   it('renders successfully', () => {
     expect(() => {
-      render(<NavItem />)
+      render(<WelcomePage />)
     }).not.toThrow()
   })
 })

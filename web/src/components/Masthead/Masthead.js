@@ -1,7 +1,7 @@
 import { Link, routes } from '@redwoodjs/router'
-import { css } from 'linaria'
+import styled from 'styled-components'
 
-const mastheadLink = css`
+const MastheadLink = styled(Link)`
   color: inherit;
   max-width: auto;
   margin: 0;
@@ -17,9 +17,9 @@ const mastheadLink = css`
 `
 
 const Masthead = ({ title, children, ...props }) => (
-  <Link className={mastheadLink} to={routes.home()} {...props}>
+  <MastheadLink to={routes.home()} {...props}>
     {children || <h1>{title}</h1>}
-  </Link>
+  </MastheadLink>
 )
 
 Masthead.defaultProps = {

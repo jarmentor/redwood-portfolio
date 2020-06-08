@@ -1,11 +1,7 @@
-const Copyright = ({ year, children, ...props }) => (
+const Copyright = ({ children, ...props }) => (
   <small {...props}>
-    &copy; Copyright {year} {children}
+    &copy; Copyright {new Date().getFullYear()} {children}
   </small>
 )
-
-Copyright.defaultProps = {
-  year: new Date().getFullYear(),
-}
 
 export default Copyright

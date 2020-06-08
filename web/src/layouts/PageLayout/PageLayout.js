@@ -1,25 +1,43 @@
-import { css } from 'linaria'
+import { routes } from '@redwoodjs/router'
 
-import { HeaderLayout, FooterLayout } from '@layouts'
+import {
+  Layout,
+  Copyright,
+  Masthead,
+  Nav,
+  Authenticated,
+  Typography,
+} from '@components'
+import { default as socialProfiles } from '@assets/profiles'
 
-const PageLayout = ({ header, subhead, children }) => (
-  <>
-    <HeaderLayout />
-    <main className={mainStyles}>
-      {header && <h1>{header}</h1>}
-      {subhead && <h2>{subhead}</h2>}
-      {children}
-    </main>
-    <FooterLayout />
-  </>
+import Profiles from './Profiles'
+const { Header, Content, Footer } = Layout
+
+const Page = ({ children }) => (
+  <Layout>
+    <Header>
+      <Masthead />
+      <Nav>
+        <Nav.Item to={routes.home()}>Home</Nav.Item>
+        <Nav.Item to={routes.about()}>About</Nav.Item>
+        <Nav.Item to={routes.contact()}>Contact</Nav.Item>
+      </Nav>
+    </Header>
+    <Content>{children}</Content>
+    <Footer>
+      <Typography.Title level={6}>
+        <a href="mailto:jonathan@jonathanarmentor.com">
+          jonathan@jonathanarmentor.com
+        </a>
+      </Typography.Title>
+
+      <Profiles socials={socialProfiles} />
+      <Copyright>Jonathan Armentor</Copyright>
+      <small style={{ marginTop: '1rem' }}>
+        <Authenticated />
+      </small>
+    </Footer>
+  </Layout>
 )
 
-const mainStyles = css`
-  background-color: var(--off-white);
-  padding: 2rem;
-  margin: 0 auto;
-  max-width: 100%;
-  min-height: 60vh;
-`
-
-export default PageLayout
+export default Page
