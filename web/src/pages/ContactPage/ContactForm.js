@@ -39,16 +39,17 @@ const ContactForm = () => {
       formMethods={formMethods}
     >
       <>
+        <StyledLabel htmlFor="name">Name</StyledLabel>
         <TextField
           className="input"
           name="name"
           validation={{ required: true }}
         />
-        <StyledLabel htmlFor="name">Name</StyledLabel>
         <StyledErrorField name="name" />
       </>
 
       <>
+        <StyledLabel htmlFor="email">E-Mail</StyledLabel>
         <TextField
           className="input"
           name="email"
@@ -61,10 +62,10 @@ const ContactForm = () => {
             message: 'Please enter a valid e-mail address.',
           }}
         />
-        <StyledLabel htmlFor="email">E-Mail</StyledLabel>
         <StyledErrorField name="email" />
       </>
       <>
+        <StyledLabel htmlFor="message">Message</StyledLabel>
         <TextAreaField
           style={{ resize: 'none' }}
           name="message"
@@ -73,7 +74,6 @@ const ContactForm = () => {
           cols="40"
           validation={{ required: true, message: 'please enter a message' }}
         />
-        <StyledLabel htmlFor="message">Message</StyledLabel>
         <StyledErrorField name="message" />
       </>
       <StyledSubmit disabled={loading}>Submit</StyledSubmit>
@@ -84,11 +84,10 @@ const ContactForm = () => {
 const StyledContactForm = styled(Form)`
   display: flex;
   flex-direction: column;
-
   padding-top: 2rem;
 
   * {
-    color: #22261f;
+    color: var(--black);
   }
 
   input,
@@ -100,19 +99,15 @@ const StyledContactForm = styled(Form)`
     padding: 0.625rem;
     transition: ease-in-out 150ms;
     will-change: box-shadow;
+    outline: 0;
     :focus {
-      outline: 0;
       box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
-    }
-
-    :focus + label {
-      transform: translateX(-5rem) translateY(-2rem);
     }
   }
 `
 const StyledLabel = styled(Label)`
-  margin-bottom: 4rem;
-  margin-top: 0.5rem;
+  margin-top: 4rem;
+  margin-bottom: 0.5rem;
   transition: all cubic-bezier(0.23, 1, 0.32, 1) 200ms;
   user-select: none;
   z-index: -1;
@@ -128,14 +123,14 @@ const StyledSubmit = styled(Submit)`
   border-radius: 0.125em;
   border: 0;
   box-shadow: 0px;
-  background-color: #fff;
-  color: #22261f;
+  color: var(--black);
+  background-color: var(--off-white);
   letter-spacing: 0.125em;
   margin-top: 2em;
   max-width: 10em;
-  padding: 1em 0.75em;
+  padding: 0.5em 0.625em;
   text-transform: uppercase;
-  border: 2px solid #22261f;
+  border: 2px solid var(--black);
   transition: all cubic-bezier(0.23, 1, 0.32, 1) 300ms;
 
   :hover {

@@ -1,54 +1,105 @@
 import { createGlobalStyle } from 'styled-components'
 
-import { breakpoints, colors, typography } from '@styles'
+import { colors } from '@styles'
+
+const fontList = `nimbus-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+'Helvetica Neue', sans-serif`
 
 const GlobalStyle = createGlobalStyle`
-    :root {
-      --midnight-green: ${colors.midnightGreen};
-      --medium-turquoise: ${colors.mediumTurquoise};
-      --mint-cream: ${colors.mintCream};
-      --white: ${colors.white};
-      --bittersweet: ${colors.bittersweet};
-      --yellow: ${colors.yellow};
-      --brand-primary: var(--yellow);
-      --black: ${colors.black};
-      --off-white: ${colors.offWhite};
-      --linkHighlight: var(--yellow);
-    }
+:root {
+  --white: ${colors.mercury};
+  --black: ${colors.codGray};
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+ul[class],
+ol[class] {
+  padding: 0;
+}
 
-    * {
-      -webkit-touch-callout: none;
-      -webkit-tap-highlight-color: transparent;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
 
-      &,
-      *:before,
-      *:after {
-        box-sizing: border-box;
-      }
-    }
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
 
-    h1,
-    h2,
-    h3 {
-      text-rendering: optimizeLegibility;
-    }
+ul[class],
+ol[class] {
+  list-style: none;
+}
 
-    a {
-      color:inherit;
-      text-decoration:none;
-    }
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
 
-    main a {
-      text-decoration: underline;
-      color: inherit;
-      outline: 0;
-    }
-    body {
-      padding: 0;
-      margin: 0;
-    }
-  ${typography}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+body {
+  font-family: ${fontList};
+  font-size: 16px;
+  line-height: 1.5;
+  font-style: normal;
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures contextual;
+  font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  main & {
+    outline: 0;
+    text-decoration: underline;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 `
 export default GlobalStyle

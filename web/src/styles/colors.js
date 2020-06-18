@@ -1,12 +1,9 @@
 const colors = {
-  black: '#63616c',
-  midnightGreen: '#1a535c',
-  mediumTurquoise: '#4ecdc4',
-  mintCream: '#f7fff7',
-  white: '#fff',
-  bittersweet: '#ff6b6b',
-  yellow: '#ffcd67',
-  offWhite: '#fffef0',
+  mercury: '#eaeaea',
+  silverSand: '#bcc1c0',
+  codGray: '#0a0a0a',
+  sirocco: '#7a7f80',
+  capeCod: '#3d4444',
 }
 
 export default colors

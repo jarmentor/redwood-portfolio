@@ -9,12 +9,26 @@ const StyledFooter = styled.footer`
   justify-content: flex-end;
   margin: 0 auto;
   text-align: right;
-  padding: 4vw 5vh 3vh;
+  padding: 2rem;
   min-height: 30vh;
+  align-items: flex-end;
 
   @media screen and (max-width: ${breakpoints.medium}) {
     flex-direction: column;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      align-self: flex-start;
+      text-align: left;
+    }
+
     > * {
+      align-self: flex-start;
+      text-align: left;
       margin-bottom: 1rem;
     }
   }

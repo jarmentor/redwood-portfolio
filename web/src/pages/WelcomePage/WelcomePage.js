@@ -1,21 +1,19 @@
-import { css } from 'styled-components'
+import styled from 'styled-components'
 
 import { Typography } from '@components'
 
 const { Title, Paragraph } = Typography
-const welcomeStyles = css`
-  margin: 10vh;
-  background-color: #fff;
+
+const StyledSection = styled.section`
   border: 1px solid black;
-  height: 80vh;
   display: flex;
-  align-items: center;
+  align-content: center;
   flex-direction: column;
-  justify-content: center;
+  justify-items: center;
 `
 
 const WelcomePage = () => (
-  <section className={welcomeStyles}>
+  <StyledSection>
     <Title level={1}>Welcome</Title>
     <Paragraph>
       Officia et commodo pariatur labore irure eiusmod consequat eiusmod commodo
@@ -23,7 +21,7 @@ const WelcomePage = () => (
       fugiat duis voluptate occaecat sunt mollit excepteur do consectetur.
       Laboris excepteur enim mollit et incididunt laboris et est.
     </Paragraph>
-  </section>
+  </StyledSection>
 )
 
 export default WelcomePage

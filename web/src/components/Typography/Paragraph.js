@@ -1,15 +1,10 @@
 import styled from 'styled-components'
 
 const StyledParagraph = styled.p`
-  :first-of-type,
-  .lead {
-    font-size: 135%;
-    color: rgba(0, 0, 0, 0.8);
-  }
+  font-size: 1rem;
+  max-width: 45rem;
 `
 
-const Paragraph = ({ children, ...props }) => {
-  return <StyledParagraph {...props}>{children}</StyledParagraph>
-}
+const Paragraph = (props) => <StyledParagraph {...props} />
 
 export default Paragraph
