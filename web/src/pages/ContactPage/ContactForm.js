@@ -85,6 +85,8 @@ const StyledContactForm = styled(Form)`
   display: flex;
   flex-direction: column;
 
+  padding-top: 2rem;
+
   * {
     color: #22261f;
   }
