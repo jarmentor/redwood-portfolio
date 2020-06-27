@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { Typography } from '@components'
-
+const { SocialLink } = Typography
 const ProfileContainer = styled.div`
   margin: 2rem 0;
 
@@ -14,10 +14,10 @@ const ProfileContainer = styled.div`
   }
 `
 
-const Profiles = ({ socials }) => (
+const Profiles = ({ socials = [] }) => (
   <ProfileContainer>
     {socials.map((profile, i) => (
-      <Typography.SocialLink key={i} {...profile} />
+      <SocialLink key={i} {...profile} />
     ))}
   </ProfileContainer>
 )

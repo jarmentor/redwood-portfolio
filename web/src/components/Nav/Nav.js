@@ -19,6 +19,7 @@ const NavContainer = styled.ul`
       margin-left: 2rem;
     }
   }
+
   @media screen and (max-width: ${breakpoints.medium}) {
     flex-direction: column;
     text-align: right;
