@@ -1,22 +1,22 @@
 export default [
   {
     url: 'https://github.com/jarmentor/redwood-portfolio',
-    service: 'Github',
+    name: 'Github',
   },
   {
     url: 'https://twitter.com/jayarmentor/',
-    service: 'Twitter',
+    name: 'Twitter',
   },
   {
     url: 'https://instagram.com/jonathanarmentor/',
-    service: 'Instagram',
+    name: 'Instagram',
   },
   {
     url: 'https://www.linkedin.com/in/jonathan-armentor',
-    service: 'LinkedIn',
+    name: 'LinkedIn',
   },
   {
     url: 'https://www.behance.net/jonathanarmentor',
-    service: 'Behance',
+    name: 'Behance',
   },
 ]

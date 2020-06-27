@@ -1,6 +1,5 @@
 import { useMutation } from '@redwoodjs/web'
 import { Link, routes } from '@redwoodjs/router'
-
 const DELETE_POST_MUTATION = gql`
   mutation DeletePostMutation($id: Int!) {
     deletePost(id: $id) {
@@ -11,20 +10,12 @@ const DELETE_POST_MUTATION = gql`
 
 const MAX_STRING_LENGTH = 150
 
-const truncate = (text) => {
-  let output = text
-  if (text && text.length > MAX_STRING_LENGTH) {
-    output = output.substring(0, MAX_STRING_LENGTH) + '...'
+const truncate = (text = '', ending = '...') => {
+  if (text.length < MAX_STRING_LENGTH) {
+    return text
   }
-  return output
-}
 
-const timeTag = (datetime) => {
-  return (
-    <time dateTime={datetime} title={datetime}>
-      {new Date(datetime).toUTCString()}
-    </time>
-  )
+  return text.substring(0, MAX_STRING_LENGTH) + ending
 }
 
 const PostsList = ({ posts }) => {
@@ -56,7 +47,11 @@ const PostsList = ({ posts }) => {
                 <p>{truncate(post.body)}</p>
               </td>
               <td>{truncate(post.author)}</td>
-              <td>{timeTag(post.createdAt)}</td>
+              <td>
+                <time dateTime={post.createdAt} title={post.createdAt}>
+                  {new Date(post.createdAt).toUTCString()}
+                </time>
+              </td>
               <td>
                 <nav className="rw-table-actions">
                   <Link

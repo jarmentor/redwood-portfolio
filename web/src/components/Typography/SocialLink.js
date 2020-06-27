@@ -1,6 +1,11 @@
-const SocialLink = ({ service, url }) => (
-  <a rel="noopener noreferrer" target="_blank" href={url}>
-    {service}
+const linkProps = {
+  rel: 'noopener noreferrer',
+  target: '_blank',
+}
+
+const SocialLink = ({ name, url }) => (
+  <a href={url} {...linkProps}>
+    {name}
   </a>
 )
 
