@@ -1,6 +1,5 @@
 import { useMutation } from '@redwoodjs/web'
 import { Link, routes } from '@redwoodjs/router'
-
 const DELETE_POST_MUTATION = gql`
   mutation DeletePostMutation($id: Int!) {
     deletePost(id: $id) {
@@ -11,20 +10,12 @@ const DELETE_POST_MUTATION = gql`
 
 const MAX_STRING_LENGTH = 150
 
-const truncate = (text) => {
-  let output = text
-  if (text && text.length > MAX_STRING_LENGTH) {
-    output = output.substring(0, MAX_STRING_LENGTH) + '...'
+const truncate = (text = '', ending = '...') => {
+  if (text.length < MAX_STRING_LENGTH) {
+    return text
   }
-  return output
-}
 
-const timeTag = (datetime) => {
-  return (
-    <time dateTime={datetime} title={datetime}>
-      {new Date(datetime).toUTCString()}
-    </time>
-  )
+  return text.substring(0, MAX_STRING_LENGTH) + ending
 }
 
 const PostsList = ({ posts }) => {
@@ -49,35 +40,37 @@ const PostsList = ({ posts }) => {
           </tr>
         </thead>
         <tbody>
-          {posts.map((post) => (
-            <tr key={post.id}>
-              <td>{truncate(post.title)}</td>
+          {posts.map(({ id, body, title, author, createdAt }) => (
+            <tr key={id}>
+              <td>{truncate(title)}</td>
+              <td dangerouslySetInnerHTML={{ __html: truncate(body) }}></td>
+              <td>{truncate(author)}</td>
               <td>
-                <p>{truncate(post.body)}</p>
+                <time dateTime={createdAt} title={createdAt}>
+                  {new Date(createdAt).toUTCString()}
+                </time>
               </td>
-              <td>{truncate(post.author)}</td>
-              <td>{timeTag(post.createdAt)}</td>
               <td>
                 <nav className="rw-table-actions">
                   <Link
-                    to={routes.post({ id: post.id })}
-                    title={'Show post ' + post.id + ' detail'}
+                    to={routes.adminPost({ id })}
+                    title={'Show post ' + id + ' detail'}
                     className="rw-button rw-button-small"
                   >
                     Show
                   </Link>
                   <Link
-                    to={routes.editPost({ id: post.id })}
-                    title={'Edit post ' + post.id}
+                    to={routes.adminEditPost({ id })}
+                    title={'Edit post ' + id}
                     className="rw-button rw-button-small rw-button-blue"
                   >
                     Edit
                   </Link>
                   <a
                     href="#"
-                    title={'Delete post ' + post.id}
+                    title={'Delete post ' + id}
                     className="rw-button rw-button-small rw-button-red"
-                    onClick={() => onDeleteClick(post.id)}
+                    onClick={() => onDeleteClick(id)}
                   >
                     Delete
                   </a>

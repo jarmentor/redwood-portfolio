@@ -2,15 +2,13 @@ import { createGlobalStyle } from 'styled-components'
 
 import { colors } from '@styles'
 
-const fontList = `nimbus-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-'Helvetica Neue', sans-serif`
-
 const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
 :root {
   --white: ${colors.mercury};
   --black: ${colors.codGray};
 }
+
 *,
 *::before,
 *::after {
@@ -69,10 +67,13 @@ textarea,
 select {
   font: inherit;
 }
+
+
 body {
-  font-family: ${fontList};
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1.5;
+  color: var(--black);
   font-style: normal;
   font-kerning: normal;
   font-variant-ligatures: common-ligatures contextual;
@@ -81,6 +82,18 @@ body {
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.sr-only{
+    border: 0;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }
 
 a {
@@ -92,6 +105,8 @@ a {
     text-decoration: underline;
   }
 }
+
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;

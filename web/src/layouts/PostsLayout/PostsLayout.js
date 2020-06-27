@@ -1,6 +1,7 @@
 import { Link, routes } from '@redwoodjs/router'
 
 import { Typography } from '@components'
+
 const { Title } = Typography
 
 const RwButton = ({ icon, children, to, ...props }) => (
@@ -13,11 +14,11 @@ const PostsLayout = ({ children }) => (
   <div className="rw-scaffold">
     <header className="rw-header">
       <Title level={1} className="rw-heading rw-heading-primary">
-        <Link to={routes.posts()} className="rw-link">
+        <Link to={routes.adminPosts()} className="rw-link">
           Posts
         </Link>
       </Title>
-      <RwButton icon="+" to={routes.newPost()}>
+      <RwButton icon="+" to={routes.adminNewPost()}>
         New Post
       </RwButton>
     </header>

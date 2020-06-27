@@ -5,9 +5,10 @@ import { breakpoints } from '@styles'
 import Header from './Header'
 import Footer from './Footer'
 import Content from './Content'
+
 const StyledLayout = styled.div`
-  max-width: 80vw;
-  padding: auto 10vw;
+  max-width: 90vw;
+  padding: auto 5vw;
   margin: 0 auto;
 
   @media screen and (max-width: ${breakpoints.medium}) {
@@ -18,6 +19,7 @@ const StyledLayout = styled.div`
 const Layout = (props) => {
   return <StyledLayout {...props} />
 }
+
 Layout.Header = Header
 Layout.Footer = Footer
 Layout.Content = Content

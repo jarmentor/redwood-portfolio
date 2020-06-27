@@ -1,6 +1,8 @@
 import { useMutation } from '@redwoodjs/web'
 import { Link, routes, navigate } from '@redwoodjs/router'
 
+import { AdminLayout } from '@layouts'
+
 const DELETE_POST_MUTATION = gql`
   mutation DeletePostMutation($id: Int!) {
     deletePost(id: $id) {
@@ -12,7 +14,7 @@ const DELETE_POST_MUTATION = gql`
 const Post = ({ post }) => {
   const [deletePost] = useMutation(DELETE_POST_MUTATION, {
     onCompleted: () => {
-      navigate(routes.posts())
+      navigate(routes.adminPosts())
       location.reload()
     },
   })
@@ -24,7 +26,7 @@ const Post = ({ post }) => {
   }
 
   return (
-    <>
+    <AdminLayout>
       <div className="rw-segment">
         <header className="rw-segment-header">
           <h2 className="rw-heading rw-heading-secondary">
@@ -43,7 +45,7 @@ const Post = ({ post }) => {
             </tr>
             <tr>
               <th>body</th>
-              <td>{post.body}</td>
+              <td dangerouslySetInnerHTML={{ __html: post.body }}></td>
             </tr>
             <tr>
               <th>createdAt</th>
@@ -54,7 +56,13 @@ const Post = ({ post }) => {
       </div>
       <nav className="rw-button-group">
         <Link
-          to={routes.editPost({ id: post.id })}
+          to={routes.viewPost({ id: post.id })}
+          className="rw-button rw-button-blue"
+        >
+          View
+        </Link>
+        <Link
+          to={routes.adminEditPost({ id: post.id })}
           className="rw-button rw-button-blue"
         >
           Edit
@@ -67,7 +75,7 @@ const Post = ({ post }) => {
           Delete
         </a>
       </nav>
-    </>
+    </AdminLayout>
   )
 }
 

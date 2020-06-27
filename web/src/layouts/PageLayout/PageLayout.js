@@ -2,11 +2,12 @@ import { Layout } from '@components'
 
 import { default as Header } from './PageHeader'
 import { default as Footer } from './PageFooter'
+
 const { Content } = Layout
 
-const Page = ({ children }) => (
+const Page = ({ title, children }) => (
   <Layout>
-    <Header />
+    <Header pageTitle={title} />
     <Content>{children}</Content>
     <Footer />
   </Layout>
