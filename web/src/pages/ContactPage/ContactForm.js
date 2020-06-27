@@ -10,6 +10,8 @@ import {
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
 
+import { breakpoints } from '@styles'
+
 const CREATE_CONTACT = gql`
   mutation CreateContactMutation($input: CreateContactFormInput!) {
     createContactForm(input: $input) {
@@ -85,6 +87,10 @@ const StyledContactForm = styled(Form)`
   display: flex;
   flex-direction: column;
   padding-top: 2rem;
+
+  @media screen and (max-width: ${breakpoints.medium}) {
+    width: 100%;
+  }
 
   * {
     color: var(--black);

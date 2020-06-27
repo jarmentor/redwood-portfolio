@@ -1,23 +1,37 @@
-import { Layout, Copyright, Authenticated, Typography } from '@components'
-import { default as socialProfiles } from '@assets/profiles'
+import styled from 'styled-components'
 
-import Profiles from './Profiles'
+import { Layout, Copyright, Authenticated, Typography } from '@components'
+import profiles from '@assets/profiles'
 const { Footer } = Layout
-const { Title, Small } = Typography
+const {
+  Headline,
+  Link: { MailTo, Social },
+} = Typography
+
+const FooterSection = styled.section`
+  margin: 1em 0;
+`
+
+const SocialProfiles = ({ profiles }) => (
+  <FooterSection>
+    {profiles.map((account, i) => (
+      <Social key={i} {...account} />
+    ))}
+  </FooterSection>
+)
 
 const PageFooter = () => (
   <Footer>
-    <Title level={6}>
-      <a href="mailto:jonathan@jonathanarmentor.com">
-        jonathan@jonathanarmentor.com
-      </a>
-    </Title>
-
-    <Profiles socials={socialProfiles} />
-    <Copyright>Jonathan Armentor</Copyright>
-    <Small>
+    <Headline level={6}>
+      <MailTo address="jonathan@jonathanarmentor.com" />
+    </Headline>
+    <SocialProfiles {...{ profiles }} />
+    <FooterSection>
       <Authenticated />
-    </Small>
+    </FooterSection>
+    <FooterSection>
+      <Copyright>Jonathan Armentor</Copyright>
+    </FooterSection>
   </Footer>
 )
 

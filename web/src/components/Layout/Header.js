@@ -1,13 +1,14 @@
 import styled from 'styled-components'
 
 import { breakpoints } from '@styles'
+
 const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 6rem;
+  min-height: 5rem;
   padding: 1rem 2rem;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--black);
 
   @media screen and (max-width: ${breakpoints.small}) {
     flex-direction: column;

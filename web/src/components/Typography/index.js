@@ -1,13 +1,13 @@
-import Title from './Title'
+import Headline from './Headline'
+import MailTo from './MailTo'
 import Paragraph from './Paragraph'
-import SocialLink from './SocialLink'
-import Small from './Small'
+import Social from './SocialLink'
 
 function Typography() {}
 
-Typography.Title = Title
+Typography.Headline = Headline
+Typography.Title = Typography.Headline
 Typography.Paragraph = Paragraph
-Typography.SocialLink = SocialLink
-Typography.Small = Small
+Typography.Link = { Social, MailTo }
 
 export default Typography

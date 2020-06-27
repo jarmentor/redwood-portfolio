@@ -4,15 +4,20 @@ import {
   FieldError,
   Label,
   TextField,
-  TextAreaField,
   Submit,
 } from '@redwoodjs/web'
+import { useState } from 'react'
 import { useAuth } from '@redwoodjs/auth'
+import ReactQuill from 'react-quill'
+import 'react-quill/dist/quill.snow.css'
 
 const PostForm = (props) => {
   const { currentUser } = useAuth()
+  const [value, setValue] = useState(props.post?.body || '')
+
   const onSubmit = (data) => {
     data.author = currentUser.email
+    data.body = value
     props.onSave(data, props?.post?.id)
   }
 
@@ -49,12 +54,12 @@ const PostForm = (props) => {
         >
           Body
         </Label>
-        <TextAreaField
+        <ReactQuill
+          theme="snow"
           name="body"
-          defaultValue={props.post?.body}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
+          style={{ height: '30vh', paddingBottom: '2rem', background: 'white' }}
+          value={value}
+          onChange={setValue}
         />
         <FieldError name="body" className="rw-field-error" />
 

@@ -1,12 +1,22 @@
+import styled from 'styled-components'
+
 const linkProps = {
   rel: 'noopener noreferrer',
   target: '_blank',
 }
 
+const StyledSocialLink = styled.a`
+  display: block;
+  text-transform: uppercase;
+  :hover {
+    text-decoration: line-through;
+  }
+`
+
 const SocialLink = ({ name, url }) => (
-  <a href={url} {...linkProps}>
+  <StyledSocialLink href={url} {...linkProps}>
     {name}
-  </a>
+  </StyledSocialLink>
 )
 
 export default SocialLink

@@ -45,7 +45,7 @@ const Post = ({ post }) => {
             </tr>
             <tr>
               <th>body</th>
-              <td>{post.body}</td>
+              <td dangerouslySetInnerHTML={{ __html: post.body }}></td>
             </tr>
             <tr>
               <th>createdAt</th>
@@ -55,6 +55,12 @@ const Post = ({ post }) => {
         </table>
       </div>
       <nav className="rw-button-group">
+        <Link
+          to={routes.viewPost({ id: post.id })}
+          className="rw-button rw-button-blue"
+        >
+          View
+        </Link>
         <Link
           to={routes.adminEditPost({ id: post.id })}
           className="rw-button rw-button-blue"

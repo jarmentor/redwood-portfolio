@@ -43,9 +43,7 @@ const PostsList = ({ posts }) => {
           {posts.map(({ id, body, title, author, createdAt }) => (
             <tr key={id}>
               <td>{truncate(title)}</td>
-              <td>
-                <p>{truncate(body)}</p>
-              </td>
+              <td dangerouslySetInnerHTML={{ __html: truncate(body) }}></td>
               <td>{truncate(author)}</td>
               <td>
                 <time dateTime={createdAt} title={createdAt}>

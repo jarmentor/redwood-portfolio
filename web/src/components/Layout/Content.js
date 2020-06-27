@@ -6,8 +6,6 @@ const StyledMain = styled.main`
   max-width: 100%;
   min-height: 80vh;
 `
-const Content = ({ children, ...props }) => (
-  <StyledMain {...props}>{children}</StyledMain>
-)
+const Content = (props) => <StyledMain {...props} />
 
 export default Content
