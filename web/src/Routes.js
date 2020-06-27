@@ -3,16 +3,19 @@ import { Router, Route, Private } from '@redwoodjs/router'
 const Routes = () => (
   <Router>
     <Private unauthenticated="home">
-      <Route path="/admin/posts/new" page={NewPostPage} name="newPost" />
+      <Route path="/admin" page={AdminDashboardPage} name="adminDashboard" />
+
+      <Route path="/admin/posts/new" page={NewPostPage} name="adminNewPost" />
 
       <Route
         path="/admin/posts/{id:Int}/edit"
         page={EditPostPage}
-        name="editPost"
+        name="adminEditPost"
       />
-      <Route path="/admin/posts/{id:Int}" page={PostPage} name="post" />
-      <Route path="/admin/posts" page={PostsPage} name="posts" />
+      <Route path="/admin/posts/{id:Int}" page={PostPage} name="adminPost" />
+      <Route path="/admin/posts" page={PostsPage} name="adminPosts" />
     </Private>
+
     <Route path="/about" page={AboutPage} name="about" />
     <Route path="/contact" page={ContactPage} name="contact" />
     <Route path="/welcome" page={WelcomePage} name="welcome" />

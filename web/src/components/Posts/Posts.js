@@ -40,39 +40,39 @@ const PostsList = ({ posts }) => {
           </tr>
         </thead>
         <tbody>
-          {posts.map((post) => (
-            <tr key={post.id}>
-              <td>{truncate(post.title)}</td>
+          {posts.map(({ id, body, title, author, createdAt }) => (
+            <tr key={id}>
+              <td>{truncate(title)}</td>
               <td>
-                <p>{truncate(post.body)}</p>
+                <p>{truncate(body)}</p>
               </td>
-              <td>{truncate(post.author)}</td>
+              <td>{truncate(author)}</td>
               <td>
-                <time dateTime={post.createdAt} title={post.createdAt}>
-                  {new Date(post.createdAt).toUTCString()}
+                <time dateTime={createdAt} title={createdAt}>
+                  {new Date(createdAt).toUTCString()}
                 </time>
               </td>
               <td>
                 <nav className="rw-table-actions">
                   <Link
-                    to={routes.post({ id: post.id })}
-                    title={'Show post ' + post.id + ' detail'}
+                    to={routes.adminPost({ id })}
+                    title={'Show post ' + id + ' detail'}
                     className="rw-button rw-button-small"
                   >
                     Show
                   </Link>
                   <Link
-                    to={routes.editPost({ id: post.id })}
-                    title={'Edit post ' + post.id}
+                    to={routes.adminEditPost({ id })}
+                    title={'Edit post ' + id}
                     className="rw-button rw-button-small rw-button-blue"
                   >
                     Edit
                   </Link>
                   <a
                     href="#"
-                    title={'Delete post ' + post.id}
+                    title={'Delete post ' + id}
                     className="rw-button rw-button-small rw-button-red"
-                    onClick={() => onDeleteClick(post.id)}
+                    onClick={() => onDeleteClick(id)}
                   >
                     Delete
                   </a>

@@ -1,6 +1,10 @@
 import { useMutation } from '@redwoodjs/web'
 import { navigate, routes } from '@redwoodjs/router'
-import PostForm from 'src/components/PostForm'
+
+import { PostForm, Typography } from '@components'
+import { AdminLayout } from '@layouts'
+
+const { Title } = Typography
 
 const CREATE_POST_MUTATION = gql`
   mutation CreatePostMutation($input: CreatePostInput!) {
@@ -13,7 +17,7 @@ const CREATE_POST_MUTATION = gql`
 const NewPost = () => {
   const [createPost, { loading, error }] = useMutation(CREATE_POST_MUTATION, {
     onCompleted: () => {
-      navigate(routes.posts())
+      navigate(routes.adminPosts())
     },
   })
 
@@ -22,14 +26,16 @@ const NewPost = () => {
   }
 
   return (
-    <div className="rw-segment">
+    <AdminLayout className="rw-segment">
       <header className="rw-segment-header">
-        <h2 className="rw-heading rw-heading-secondary">New Post</h2>
+        <Title level={2} className="rw-heading rw-heading-secondary">
+          New Post
+        </Title>
       </header>
       <div className="rw-segment-main">
         <PostForm onSave={onSave} loading={loading} error={error} />
       </div>
-    </div>
+    </AdminLayout>
   )
 }
 
