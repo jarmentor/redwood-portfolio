@@ -5,9 +5,9 @@ import { default as Footer } from './PageFooter'
 
 const { Content } = Layout
 
-const Page = ({ title, children }) => (
+const Page = ({ children }) => (
   <Layout>
-    <Header pageTitle={title} />
+    <Header />
     <Content>{children}</Content>
     <Footer />
   </Layout>

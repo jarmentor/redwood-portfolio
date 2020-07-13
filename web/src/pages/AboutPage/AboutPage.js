@@ -4,7 +4,11 @@ import styled from 'styled-components'
 import { Typography } from '@components'
 import { breakpoints } from '@styles'
 import { PageLayout } from '@layouts'
-const { Title, Paragraph } = Typography
+const {
+  Title,
+  Paragraph,
+  Link: { MailTo },
+} = Typography
 
 const LeadParagraph = styled(Paragraph)`
   font-size: 2em;
@@ -43,9 +47,6 @@ const Article = styled.article`
     }
   }
 `
-const {
-  Link: { MailTo },
-} = Typography
 
 const AboutPage = () => {
   return (
