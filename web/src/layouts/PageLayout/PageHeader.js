@@ -17,7 +17,7 @@ const StyledPageTitle = styled.span`
   }
 `
 
-const PageHeader = ({ pageTitle = '' }) => (
+const PageHeader = () => (
   <Header>
     <Masthead to={routes.home()}>Jonathan Armentor</Masthead>
     <StyledPageTitle>{document.location.href.split('/').pop()}</StyledPageTitle>
