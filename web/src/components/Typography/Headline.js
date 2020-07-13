@@ -1,13 +1,17 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const getHeadlineSize = (level) => {
   let sizes = ['96', '57', '46', '32', '23', '19']
   return sizes[level - 1]
 }
 
+const fontSize = css`
+  font-size: ${({ level }) => `${getHeadlineSize(level)}px`};
+`
+
 const Headline = styled(({ level }) => `h${level}`)`
-  font-size: ${({ level, unit }) => `${getHeadlineSize(level)}${unit || 'px'}`};
-  font-family: 'Merriweather', serif;
+  ${fontSize}
+  font-family: 'Merriweather Sans', sans-serif;
   text-rendering: optimizeLegibility;
 `
 
