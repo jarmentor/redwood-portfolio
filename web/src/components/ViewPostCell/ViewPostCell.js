@@ -15,6 +15,4 @@ export const Loading = () => <div>Loading...</div>
 
 export const Empty = () => <div>Post not found</div>
 
-export const Success = ({ post }) => {
-  return <ViewPost post={post} />
-}
+export const Success = ({ post }) => <ViewPost post={post} />

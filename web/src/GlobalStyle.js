@@ -3,7 +3,6 @@ import { createGlobalStyle } from 'styled-components'
 import { colors } from '@styles'
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
 :root {
   --white: ${colors.mercury};
   --black: ${colors.codGray};

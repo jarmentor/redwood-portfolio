@@ -10,13 +10,10 @@ const DELETE_POST_MUTATION = gql`
 
 const MAX_STRING_LENGTH = 150
 
-const truncate = (text = '', ending = '...') => {
-  if (text.length < MAX_STRING_LENGTH) {
-    return text
-  }
-
-  return text.substring(0, MAX_STRING_LENGTH) + ending
-}
+const truncate = (text = '', ending = '...') =>
+  text.length < MAX_STRING_LENGTH
+    ? text
+    : text.substring(0, MAX_STRING_LENGTH) + ending
 
 const PostsList = ({ posts }) => {
   const [deletePost] = useMutation(DELETE_POST_MUTATION)

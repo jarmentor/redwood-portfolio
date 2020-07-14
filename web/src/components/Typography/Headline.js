@@ -1,20 +1,15 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
-const getHeadlineSize = (level) => {
-  let sizes = ['96', '57', '46', '32', '23', '19']
-  return sizes[level - 1]
+const getHeadlineSize = ({ level }) => {
+  let headlineSizes = ['5', '3', '2.6', '2', '1.8', '1']
+  return `${headlineSizes[level - 1]}em`
 }
 
-const fontSize = css`
-  font-size: ${({ level }) => `${getHeadlineSize(level)}px`};
-`
-
-const Headline = styled(({ level }) => `h${level}`)`
-  ${fontSize}
+const StyledHeadline = styled(({ level }) => `h${level}`)`
+  font-size: ${(props) => `${getHeadlineSize(props)}`};
   font-family: 'Merriweather Sans', sans-serif;
   text-rendering: optimizeLegibility;
 `
+const Headline = (props) => <StyledHeadline as={`h${props.level}`} {...props} />
 
-const StyledHeadline = (props) => <Headline as={`h${props.level}`} {...props} />
-
-export default StyledHeadline
+export default Headline

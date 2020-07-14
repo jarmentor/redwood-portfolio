@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const StyledParagraph = styled.p`
-  font-size: 1rem;
+  font-size: 1em;
   max-width: 45rem;
 `
 
