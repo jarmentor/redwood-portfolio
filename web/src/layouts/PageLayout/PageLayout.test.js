@@ -1,14 +1,11 @@
-import { render, cleanup } from '@testing-library/react'
+import { render } from '@redwoodjs/testing'
 
-import PageLayout from './PageLayout'
+import ContactPage from './ContactPage'
 
-describe('PageLayout', () => {
-  afterEach(() => {
-    cleanup()
-  })
+describe('ContactPage', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<PageLayout />)
+      render(<ContactPage />)
     }).not.toThrow()
   })
 })

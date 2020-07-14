@@ -90,7 +90,7 @@ const StyledContactForm = styled(Form)`
 
   ${mediaQuery.lessThan('medium')`
     width: 100%;
-`}
+  `}
 
   * {
     color: var(--black);
@@ -120,8 +120,7 @@ const StyledLabel = styled(Label)`
 `
 
 const StyledErrorField = styled(FieldError)`
-  border: var(--bittersweet);
-  color: var(--bittersweet);
+  color: red;
   font-size: 0.8rem;
   margin-top: 1rem;
 `
@@ -130,7 +129,7 @@ const StyledSubmit = styled(Submit)`
   border: 0;
   box-shadow: 0px;
   color: var(--black);
-  background-color: var(--off-white);
+  background-color: var(--white);
   letter-spacing: 0.125em;
   margin-top: 2em;
   max-width: 10em;

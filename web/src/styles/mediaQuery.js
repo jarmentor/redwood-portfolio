@@ -5,17 +5,17 @@ export const breakpoints = {
   xlarge: 60,
 }
 
-function greaterThan(size) {
-  return (style) => `@media (min-width: ${breakpoints[size]}em) {${style}}`
-}
-function lessThan(size) {
-  return (style) => `@media (max-width: ${breakpoints[size]}em) {${style}}`
-}
-function between(lowerLimit, upperLimit) {
-  return (style) =>
-    `@media (min-width: ${breakpoints[lowerLimit]}em)
+// @TODO: Refactor to media query builder
+
+const greaterThan = (size) => (style) =>
+  `@media (min-width: ${breakpoints[size]}em) {${style}}`
+
+const lessThan = (size) => (style) =>
+  `@media (max-width: ${breakpoints[size]}em) {${style}}`
+
+const between = (lowerLimit, upperLimit) => (style) =>
+  `@media (min-width: ${breakpoints[lowerLimit]}em)
       and (max-width: ${breakpoints[upperLimit]}em) {${style}}`
-}
 
 const mediaQuery = { greaterThan, lessThan, between }
 

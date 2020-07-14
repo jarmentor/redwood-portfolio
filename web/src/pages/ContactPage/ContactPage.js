@@ -12,9 +12,9 @@ const StyledFlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 
   ${mediaQuery.lessThan('medium')`
-    flex-wrap: wrap;
     flex-direction: column;
     align-items: flex-start;
   `}

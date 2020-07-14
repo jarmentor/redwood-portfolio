@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 const Box = styled.div`
-  display: block;
+  display: flex;
+  flex-direction: column;
 `
 
 export default Box
