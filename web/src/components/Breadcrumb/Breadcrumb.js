@@ -8,9 +8,9 @@ const StyledPageTitle = styled.span`
   color: var(--white);
   padding-left: 1rem;
   padding-right: 1rem;
-  ${mediaQuery.lessThan('medium')`
-  display: none;
-  `}
+  @media ${mediaQuery.smallerThan('medium')} {
+    display: none;
+  }
 `
 
 const Breadcrumb = () => {

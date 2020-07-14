@@ -14,10 +14,10 @@ const StyledFlexContainer = styled.div`
   align-items: center;
   flex-wrap: wrap;
 
-  ${mediaQuery.lessThan('medium')`
+  @media ${mediaQuery.smallerThan('medium')} {
     flex-direction: column;
     align-items: flex-start;
-  `}
+  }
 `
 
 const ContactPage = () => {

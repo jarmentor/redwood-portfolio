@@ -37,8 +37,7 @@ const Article = styled.article`
     order: -1;
   }
 
-  ${mediaQuery.lessThan('medium')`
-
+  @media ${mediaQuery.smallerThan('medium')} {
     aside {
       max-width: 100%;
 
@@ -46,7 +45,7 @@ const Article = styled.article`
         margin-top: 0;
       }
     }
-  `}
+  }
 `
 
 const AboutPage = () => {

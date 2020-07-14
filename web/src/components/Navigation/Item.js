@@ -13,9 +13,9 @@ const StyledNavItem = styled.li`
       text-decoration: line-through;
     }
 
-    ${mediaQuery.lessThan('medium')`
+    @media ${mediaQuery.smallerThan('medium')} {
       margin-left: 0 !important;
-      `}
+    }
   }
   a {
     text-transform: uppercase;

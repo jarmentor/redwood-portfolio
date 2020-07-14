@@ -14,10 +14,10 @@ const Container = styled.ul`
   display: flex;
   justify-content: space-around;
 
-  ${mediaQuery.lessThan('medium')`
-        flex-direction: column;
-        text-align: left;
-  `}
+  @media ${mediaQuery.smallerThan('medium')} {
+    flex-direction: column;
+    text-align: left;
+  }
 `
 
 const Navigation = ({ children, ...props }) => (

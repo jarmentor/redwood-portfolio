@@ -11,11 +11,11 @@ const StyledLayout = styled.div`
   padding: auto 5vw;
   margin: 0 auto;
 
-  ${mediaQuery.lessThan('medium')`
+  @media ${mediaQuery.smallerThan('medium')} {
     max-width: 100vw;
     padding: 0;
     margin: 0;
-  `}
+  }
 `
 const Layout = (props) => {
   return <StyledLayout {...props} />

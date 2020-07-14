@@ -10,10 +10,10 @@ const StyledHeader = styled.header`
   padding: 1rem 2rem;
   border-bottom: 1px solid var(--black);
 
-  ${mediaQuery.lessThan('medium')`
+  @media ${mediaQuery.smallerThan('medium')} {
     flex-direction: column;
     align-items: flex-start;
-  `}
+  }
 `
 
 const Header = ({ children, ...props }) => (

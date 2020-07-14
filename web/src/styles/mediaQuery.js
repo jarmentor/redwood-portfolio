@@ -5,18 +5,31 @@ export const breakpoints = {
   xlarge: 60,
 }
 
-// @TODO: Refactor to media query builder
+const MEDIA_QUERY_UNIT = 'em'
 
-const greaterThan = (size) => (style) =>
-  `@media (min-width: ${breakpoints[size]}em) {${style}}`
+const mediaQuery = {
+  largerThan: (size) => `(min-width: ${breakpoints[size]}${MEDIA_QUERY_UNIT})`,
+  smallerThan: (size) => `(max-width: ${breakpoints[size]}${MEDIA_QUERY_UNIT})`,
+  only: (size) => {
+    let points = Object.values(breakpoints).sort()
+    let intent = points.indexOf(breakpoints[size])
 
-const lessThan = (size) => (style) =>
-  `@media (max-width: ${breakpoints[size]}em) {${style}}`
+    return `(min-width: ${
+      points[intent === 0 ? 0 : intent - 1]
+    }${MEDIA_QUERY_UNIT}) and (max-width: ${
+      points[intent === points.length - 1 ? intent : intent + 1]
+    }${MEDIA_QUERY_UNIT})`
+  },
+  between: (sizes) => {
+    let breaks = []
+    sizes.forEach((size) => {
+      breaks.push(breakpoints[size])
+    })
+    breaks.sort()
 
-const between = (lowerLimit, upperLimit) => (style) =>
-  `@media (min-width: ${breakpoints[lowerLimit]}em)
-      and (max-width: ${breakpoints[upperLimit]}em) {${style}}`
-
-const mediaQuery = { greaterThan, lessThan, between }
+    return `(min-width: ${breaks[0]}${MEDIA_QUERY_UNIT})
+      and (max-width: ${breaks[1]}${MEDIA_QUERY_UNIT})`
+  },
+}
 
 export default mediaQuery

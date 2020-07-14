@@ -13,14 +13,14 @@ const StyledFooter = styled.footer`
   padding: 2rem;
   text-align: right;
 
-  ${mediaQuery.greaterThan('medium')`
+  @media ${mediaQuery.largerThan('medium')} {
     flex-direction: column;
     * {
       align-self: flex-start;
       text-align: left;
       margin-bottom: 1rem;
     }
-  `}
+  }
 `
 
 const Footer = ({ children, ...props }) => (

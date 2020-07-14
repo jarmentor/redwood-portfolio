@@ -30,11 +30,10 @@ const AdminWrapper = styled(Layout)`
     color: white;
     height: 10vh;
   }
-  ${mediaQuery.lessThan('medium')`
-
+  @media ${mediaQuery.smallerThan('medium')} {
     max-width: 100vw;
     padding: 0;
-`}
+  }
 `
 
 const AdminLayout = ({ children }) => (
