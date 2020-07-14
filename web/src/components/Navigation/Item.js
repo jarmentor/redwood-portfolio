@@ -1,19 +1,30 @@
 import { NavLink } from '@redwoodjs/router'
 import styled from 'styled-components'
 
+import { mediaQuery } from '@styles'
 const StyledNavItem = styled.li`
+  & {
+    margin-left: 0;
+    :not(:first-of-type) {
+      margin-left: 2rem;
+    }
+
+    :hover > a {
+      text-decoration: line-through;
+    }
+
+    ${mediaQuery.lessThan('medium')`
+      margin-left: 0 !important;
+      `}
+  }
   a {
     text-transform: uppercase;
     text-decoration: none;
     color: inherit;
   }
-
-  &:hover > a {
-    text-decoration: line-through;
-  }
 `
 
-const NavItem = ({ to, children, ...props }) => (
+const Item = ({ to, children, ...props }) => (
   <StyledNavItem>
     <NavLink to={to} activeClassName="active" {...props}>
       {children}
@@ -21,4 +32,4 @@ const NavItem = ({ to, children, ...props }) => (
   </StyledNavItem>
 )
 
-export default NavItem
+export default Item

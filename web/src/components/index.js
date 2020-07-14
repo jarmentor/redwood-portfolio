@@ -1,6 +1,6 @@
 export { default as Copyright } from './Copyright'
 export { default as Masthead } from './Masthead'
-export { default as Nav } from './Nav'
+export { default as Navigation } from './Navigation'
 export { default as Authenticated } from './Authenticated'
 export { default as PostForm } from './PostForm'
 export { default as Typography } from './Typography'
