@@ -88,9 +88,9 @@ const StyledContactForm = styled(Form)`
   flex-direction: column;
   padding-top: 2rem;
 
-  ${mediaQuery.lessThan('medium')`
+  @media ${mediaQuery.smallerThan('medium')} {
     width: 100%;
-  `}
+  }
 
   * {
     color: var(--black);

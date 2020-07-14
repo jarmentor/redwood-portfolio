@@ -1,11 +1,11 @@
 import { render } from '@redwoodjs/testing'
 
-import ContactPage from './ContactPage'
+import PageLayout from './PageLayout'
 
-describe('ContactPage', () => {
+describe('PageLayout', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<ContactPage />)
+      render(<PageLayout />)
     }).not.toThrow()
   })
 })

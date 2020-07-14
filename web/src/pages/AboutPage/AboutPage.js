@@ -48,33 +48,31 @@ const Article = styled.article`
   }
 `
 
-const AboutPage = () => {
-  return (
-    <PageLayout>
-      <Article>
-        <header>
-          <Title level={1}>{`Hi, I'm Jonathan`}</Title>
-        </header>
-        <section>
-          <Title level={2}>Designer + Web Developer</Title>
-          <LeadParagraph>
-            {`I'm a designer and web developer focused on crafting meaningful user
+const AboutPage = () => (
+  <PageLayout>
+    <Article>
+      <header>
+        <Title level={1}>{`Hi, I'm Jonathan`}</Title>
+      </header>
+      <section>
+        <Title level={2}>Designer + Web Developer</Title>
+        <LeadParagraph>
+          {`I'm a designer and web developer focused on crafting meaningful user
             experiences through visual identities, digital design.`}
-          </LeadParagraph>
-        </section>
-        <aside>
-          <Title level={5}>Looking to start a new project?</Title>
-          <Paragraph>
-            <Link to={routes.contact()}>Contact me</Link> or{' '}
-            <MailTo address="jonathan@jonathanarmentor.com">
-              send an e-mail.
-            </MailTo>
-            {` I'm looking forward to making something new with you.`}
-          </Paragraph>
-        </aside>
-      </Article>
-    </PageLayout>
-  )
-}
+        </LeadParagraph>
+      </section>
+      <aside>
+        <Title level={5}>Looking to start a new project?</Title>
+        <Paragraph>
+          <Link to={routes.contact()}>Contact me</Link> or{' '}
+          <MailTo address="jonathan@jonathanarmentor.com">
+            send an e-mail.
+          </MailTo>
+          {` I'm looking forward to making something new with you.`}
+        </Paragraph>
+      </aside>
+    </Article>
+  </PageLayout>
+)
 
 export default AboutPage
