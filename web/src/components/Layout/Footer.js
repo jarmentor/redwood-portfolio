@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { breakpoints } from '@styles'
+import { mediaQuery } from '@styles'
 
 const StyledFooter = styled.footer`
   align-items: flex-end;
@@ -13,14 +13,14 @@ const StyledFooter = styled.footer`
   padding: 2rem;
   text-align: right;
 
-  @media screen and (max-width: ${breakpoints.medium}) {
+  ${mediaQuery.greaterThan('medium')`
     flex-direction: column;
     * {
       align-self: flex-start;
       text-align: left;
       margin-bottom: 1rem;
     }
-  }
+  `}
 `
 
 const Footer = ({ children, ...props }) => (

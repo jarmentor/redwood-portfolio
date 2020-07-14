@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { breakpoints } from '@styles'
+import { mediaQuery } from '@styles'
 
 const StyledHeader = styled.header`
   display: flex;
@@ -10,10 +10,10 @@ const StyledHeader = styled.header`
   padding: 1rem 2rem;
   border-bottom: 1px solid var(--black);
 
-  @media screen and (max-width: ${breakpoints.small}) {
+  ${mediaQuery.lessThan('medium')`
     flex-direction: column;
     align-items: flex-start;
-  }
+  `}
 `
 
 const Header = ({ children, ...props }) => (

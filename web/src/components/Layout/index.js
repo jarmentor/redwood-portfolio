@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { breakpoints } from '@styles'
+import { mediaQuery } from '@styles'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -11,10 +11,11 @@ const StyledLayout = styled.div`
   padding: auto 5vw;
   margin: 0 auto;
 
-  @media screen and (max-width: ${breakpoints.medium}) {
+  ${mediaQuery.lessThan('medium')`
     max-width: 100vw;
     padding: 0;
-  }
+    margin: 0;
+  `}
 `
 const Layout = (props) => {
   return <StyledLayout {...props} />

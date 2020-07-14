@@ -1,8 +1,8 @@
 import { Link, routes } from '@redwoodjs/router'
 import styled from 'styled-components'
 
+import { mediaQuery } from '@styles'
 import { Typography } from '@components'
-import { breakpoints } from '@styles'
 import { PageLayout } from '@layouts'
 const {
   Title,
@@ -37,7 +37,8 @@ const Article = styled.article`
     order: -1;
   }
 
-  @media screen and (max-width: ${breakpoints.medium}) {
+  ${mediaQuery.lessThan('medium')`
+
     aside {
       max-width: 100%;
 
@@ -45,7 +46,7 @@ const Article = styled.article`
         margin-top: 0;
       }
     }
-  }
+  `}
 `
 
 const AboutPage = () => {

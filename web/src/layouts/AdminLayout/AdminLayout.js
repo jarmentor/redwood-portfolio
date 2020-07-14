@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link, routes } from '@redwoodjs/router'
 
-import { colors, breakpoints } from '@styles'
+import { colors, mediaQuery } from '@styles'
 import { Layout, Typography, Authenticated, Copyright, Nav } from '@components'
 
 const { Content } = Layout
@@ -30,11 +30,11 @@ const AdminWrapper = styled(Layout)`
     color: white;
     height: 10vh;
   }
+  ${mediaQuery.lessThan('medium')`
 
-  @media screen and (max-width: ${breakpoints.medium}) {
     max-width: 100vw;
     padding: 0;
-  }
+`}
 `
 
 const AdminLayout = ({ children }) => (
